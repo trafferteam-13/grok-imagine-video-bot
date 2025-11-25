@@ -6,7 +6,7 @@ from aiogram.filters import Command
 from aiogram.types import BufferedInputFile
 from aiogram import F
 
-API_TOKEN = "8205771927:AAG14vgGguDnDpWw_0VvTwvsaDam8wc5jpc"
+API_TOKEN = "8205771927:AAE6kjctmtqNlT8ux7n-cHLO4wtkeVemB9A"
 KIE_API_KEY = "39c5516044ea71607108799a405f971b"
 
 bot = Bot(token=API_TOKEN)
