@@ -7,7 +7,7 @@ from aiogram.types import BufferedInputFile
 from aiogram import F
 
 API_TOKEN = "8205771927:AAG14vgaEuDnDplw_OwVtvvsaDam8wc5jpc"
-KIE_API_KEY = "ef16727943715a5fe31680e1a6630e26"
+KIE_API_KEY = "d8eb30bcfa97ef49935cd28006e05d1d"
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
