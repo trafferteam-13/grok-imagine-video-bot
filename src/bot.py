@@ -6,7 +6,7 @@ from aiogram.filters import Command
 from aiogram.types import BufferedInputFile
 from aiogram import F
 
-API_TOKEN = "8205771927:AAG14vgaEuDnDplw_OwVtvvsaDam8wc5jpc"  # твой токен
+API_TOKEN = "8205771927:AAG14vgaEuDnDplw_OwVtvvsaDam8wc5jpc"
 KIE_API_KEY = "ef16727943715a5fe31680e1a6630e26"
 
 bot = Bot(token=API_TOKEN)
@@ -53,7 +53,7 @@ async def handle(message: types.Message):
             headers={"Authorization": f"Bearer {KIE_API_KEY}"}
         ) as resp:
             if resp.status != 200:
-                await message.reply("Ошибка генерации 😔")
+                await message.reply("Ошибка генерации")
                 return
             data = await resp.json()
             task_id = data.get("task_id")
@@ -78,9 +78,11 @@ async def handle(message: types.Message):
             async with session.get(video_url) as r:
                 if r.status == 200:
                     video_file = BufferedInputFile(await r.read(), "video.mp4")
-                    await message.answer_video(video_file, caption=f"🎥 {prompt}")
+                    await message.answer_video(video_file, caption=f"{prompt}")
+                else:
+                    await message.reply("Не удалось скачать видео")
     else:
-        await message.reply("Время вышло, попробуй ещё раз 🙏")
+        await message.reply("Таймаут, попробуй ещё раз")
 
 async def main():
     print("Бот запущен!")
