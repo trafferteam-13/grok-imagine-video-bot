@@ -34,7 +34,7 @@ async def handle(message: types.Message):
     photo = message.photo[-1]
     file = await bot.get_file(photo.file_id)
     photo_bytes = await bot.download_file(file.file_path)
-image_b64 = base64.b64encode(photo_bytes.read()).decode()  # ← убрали await
+image_b64 = base64.b64encode(photo_bytes.read()).decode()
     prompt = message.caption.strip()
     await message.reply(f"Генерирую видео...\nДвижение: {prompt}")
 
