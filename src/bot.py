@@ -85,7 +85,7 @@ async def handle(message: types.Message):
         await message.reply("Таймаут")
 
 async def main():
-    print("Бот запущен!")
+    print("Бот запущен!")                # ←←← ЭТА СТРОКА ОБЯЗАТЕЛЬНО ДОЛЖНА БЫТЬ
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
